@@ -1,0 +1,492 @@
+/* RESET */
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:'Poppins',sans-serif;
+}
+
+
+/* FUNDO DO SITE */
+
+body{
+
+background:
+linear-gradient(rgba(245,240,235,0.75), rgba(245,240,235,0.85)),
+url("assets/logoo.jpeg");
+
+background-size:70%;
+background-position:center;
+background-repeat:no-repeat;
+
+background-color:#f5f0eb;
+
+}
+
+
+/* TOPO */
+
+.cover{
+height:200px;
+}
+
+
+/* CONTAINER */
+
+.container{
+max-width:420px;
+margin:-60px auto 0;
+padding:0 20px 40px;
+}
+
+
+/* PERFIL */
+
+.profile{
+
+background:#fff;
+
+border-radius:22px;
+
+padding:70px 20px 30px;
+
+text-align:center;
+
+position:relative;
+
+box-shadow:0 10px 30px rgba(0,0,0,.08);
+
+}
+
+
+/* FOTO PERFIL */
+
+.profile img{
+
+width:110px;
+height:110px;
+
+border-radius:50%;
+
+object-fit:cover;
+object-position:center 15%;
+
+border:5px solid #c58b6d;
+
+position:absolute;
+top:-55px;
+left:50%;
+transform:translateX(-50%);
+
+}
+
+
+/* TITULO */
+
+.profile h1{
+font-size:22px;
+color:#5a3e36;
+}
+
+
+/* TEXTO */
+
+.profile p{
+font-size:14px;
+color:#7a5c52;
+margin-top:8px;
+line-height:1.6;
+}
+
+
+/* CARDS */
+
+.cards{
+margin-top:25px;
+display:flex;
+flex-direction:column;
+gap:16px;
+}
+
+
+/* CARD BASE */
+
+.card{
+
+height:110px;
+
+border-radius:18px;
+
+overflow:hidden;
+
+text-decoration:none;
+
+position:relative;
+
+background-size:110%;
+background-position:center;
+
+box-shadow:0 8px 25px rgba(0,0,0,.08);
+
+transition:.25s;
+
+display:flex;
+align-items:center;
+
+}
+
+.card:hover{
+transform:scale(1.03);
+}
+
+
+/* OVERLAY */
+
+.card-overlay{
+
+position:absolute;
+inset:0;
+
+background:linear-gradient(
+to right,
+rgba(62,47,47,0.75),
+rgba(62,47,47,0.2)
+);
+
+display:flex;
+flex-direction:column;
+justify-content:center;
+
+padding:20px;
+
+}
+
+
+/* TITULO */
+
+.card h2{
+color:#fff;
+font-size:17px;
+}
+
+
+/* BOTÃO */
+
+.card span{
+
+margin-top:8px;
+
+background:#c58b6d;
+color:#fff;
+
+padding:7px 16px;
+
+border-radius:20px;
+
+font-size:12px;
+font-weight:500;
+
+}
+
+
+/* IMAGENS DOS CARDS */
+
+.card-instagram{
+background-image:url("assets/instagram.jpg");
+}
+
+.card-servicos{
+background-image:url("assets/portfolio.jpg");
+}
+
+.card-sobre{
+background-image:url("assets/sobre.jpg");
+}
+
+.card-whatsapp{
+background-image:url("assets/zap.jpg");
+}
+
+
+/* ===================== */
+/* CATÁLOGO ANTIGO (SE USAR) */
+/* ===================== */
+
+.catalogo{
+margin-top:30px;
+display:flex;
+flex-direction:column;
+gap:20px;
+}
+
+.item{
+
+display:grid;
+grid-template-columns:1fr 1fr;
+gap:10px;
+
+background:#fff;
+
+padding:10px;
+
+border-radius:16px;
+
+box-shadow:0 6px 20px rgba(0,0,0,.08);
+
+}
+
+.item img{
+
+width:100%;
+height:170px;
+
+object-fit:cover;
+
+border-radius:12px;
+
+transition:.3s;
+
+}
+
+.item img:hover{
+transform:scale(1.02);
+}
+
+
+/* ===================== */
+/* SOBRE */
+/* ===================== */
+
+.sobre-card{
+
+background:#fff;
+
+border-radius:18px;
+
+padding:20px;
+
+margin-top:20px;
+
+box-shadow:0 6px 20px rgba(0,0,0,.08);
+
+}
+
+.sobre-card h2{
+margin-bottom:10px;
+color:#5a3e36;
+}
+
+.sobre-card p{
+font-size:14px;
+line-height:1.7;
+color:#6d4f46;
+}
+
+
+/* ===================== */
+/* BOTÃO VOLTAR */
+/* ===================== */
+
+.botao-voltar{
+
+background:#c58b6d;
+color:#fff;
+
+padding:12px 22px;
+
+border-radius:25px;
+
+font-weight:500;
+
+text-decoration:none;
+
+transition:.2s;
+
+}
+
+.botao-voltar:hover{
+transform:scale(1.05);
+}
+
+
+/* ===================== */
+/* WHATSAPP FLOAT */
+/* ===================== */
+
+.whatsapp-float{
+
+position:fixed;
+
+right:20px;
+bottom:20px;
+
+width:58px;
+height:58px;
+
+background:#c58b6d;
+
+border-radius:50%;
+
+display:flex;
+
+align-items:center;
+justify-content:center;
+
+color:#fff;
+
+font-size:26px;
+
+box-shadow:0 8px 20px rgba(0,0,0,.2);
+
+}
+
+
+/* ===================== */
+/* FOOTER */
+/* ===================== */
+
+footer{
+text-align:center;
+margin-top:25px;
+font-size:12px;
+color:#7a5c52;
+}
+
+
+/* ===================== */
+/* SERVIÇOS (AJUSTADO MOBILE) */
+/* ===================== */
+
+.servicos{
+margin-top:40px;
+}
+
+.servicos h1{
+text-align:center;
+margin-bottom:20px;
+color:#5a3e36;
+}
+
+
+/* GRID MOBILE FIRST */
+
+.grid-servicos{
+display:grid;
+grid-template-columns:1fr;
+gap:16px;
+}
+
+
+/* DESKTOP */
+
+@media(min-width:700px){
+.grid-servicos{
+grid-template-columns:1fr 1fr;
+}
+}
+
+
+/* CARD */
+
+.servico{
+
+position:relative;
+border-radius:20px;
+overflow:hidden;
+
+box-shadow:0 8px 20px rgba(0,0,0,.1);
+
+transition:.3s;
+
+}
+
+.servico:hover{
+transform:scale(1.03);
+}
+
+
+/* IMAGEM (FOCO NO CABELO) */
+
+.servico img{
+
+width:100%;
+height:230px;
+
+object-fit:cover;
+
+/* 👇 MOSTRA MAIS O CABELO */
+object-position:center top;
+
+display:block;
+
+transition:.4s;
+
+}
+
+.servico:hover img{
+transform:scale(1.08);
+}
+
+
+/* OVERLAY */
+
+.overlay{
+
+position:absolute;
+inset:0;
+
+background:linear-gradient(
+to top,
+rgba(0,0,0,.6),
+rgba(0,0,0,.05)
+);
+
+display:flex;
+flex-direction:column;
+justify-content:space-between;
+
+padding:12px;
+
+}
+
+
+/* TITULO EM CIMA */
+
+.overlay h2{
+
+color:#fff;
+font-size:14px;
+margin-top:10px;
+
+}
+
+
+/* BOTÃO MAIS DISCRETO */
+
+.overlay a{
+
+background:linear-gradient(135deg,#c58b6d,#b97a5c);
+
+color:#fff;
+
+padding:7px 14px;
+
+border-radius:20px;
+
+font-size:11px;
+
+text-decoration:none;
+
+width:max-content;
+
+transition:.25s;
+
+box-shadow:0 4px 10px rgba(0,0,0,.2);
+
+}
+
+.overlay a:hover{
+transform:scale(1.07);
+box-shadow:0 6px 15px rgba(0,0,0,.25);
+}

@@ -1,0 +1,410 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sobre — Fada Madrinha Materna</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;1,400&family=Nunito:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+<style>
+
+:root {
+  --blush: #f9f0f3;
+  --rose-light: #f3e0e7;
+  --rose: #d4849e;
+  --rose-dark: #b8637d;
+  --mauve: #9c5a72;
+  --lilac: #e8d5e0;
+  --cream: #fdf8f5;
+  --text-dark: #3d2535;
+  --text-mid: #6b4058;
+  --text-soft: #9e7a88;
+  --gold: #d4a574;
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+  background-color: var(--cream);
+  font-family: 'Nunito', sans-serif;
+  min-height: 100vh;
+}
+
+body::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  background-image:
+    radial-gradient(ellipse 80% 55% at 10% 0%, rgba(212,132,158,0.1) 0%, transparent 55%);
+  pointer-events: none;
+  z-index: 0;
+}
+
+.top-bar {
+  height: 4px;
+  background: linear-gradient(90deg, var(--rose), var(--gold), var(--rose-dark));
+}
+
+.page {
+  position: relative;
+  z-index: 1;
+  max-width: 440px;
+  margin: 0 auto;
+  padding: 0 0 80px;
+}
+
+.page-header {
+  padding: 26px 22px 22px;
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  animation: fadeUp 0.5s ease both;
+}
+
+.back-btn {
+  width: 40px;
+  height: 40px;
+  border-radius: 12px;
+  background: #fff;
+  box-shadow: 0 2px 10px rgba(61,37,53,0.1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--mauve);
+  text-decoration: none;
+  font-size: 14px;
+  flex-shrink: 0;
+  transition: transform 0.2s ease;
+}
+
+.back-btn:hover { transform: translateX(-2px); }
+
+.page-header-text h1 {
+  font-family: 'Playfair Display', serif;
+  font-size: 23px;
+  font-weight: 600;
+  color: var(--text-dark);
+}
+
+.page-header-text p {
+  font-size: 12px;
+  color: var(--text-soft);
+  margin-top: 2px;
+}
+
+/* ---- PHOTO HERO ---- */
+.photo-hero {
+  margin: 0 20px 18px;
+  border-radius: 22px;
+  overflow: hidden;
+  position: relative;
+  height: 280px;
+  box-shadow: 0 10px 30px rgba(61,37,53,0.14);
+  animation: fadeUp 0.5s 0.05s ease both;
+}
+
+.photo-hero img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center top;
+  display: block;
+}
+
+.photo-hero::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to top, rgba(30,15,25,0.72) 0%, rgba(30,15,25,0) 60%);
+}
+
+.photo-caption {
+  position: absolute;
+  bottom: 18px;
+  left: 20px;
+  z-index: 2;
+}
+
+.photo-caption h2 {
+  font-family: 'Playfair Display', serif;
+  font-size: 22px;
+  font-weight: 600;
+  color: #fff;
+  line-height: 1.2;
+}
+
+.photo-caption span {
+  font-size: 11px;
+  color: var(--gold);
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  font-weight: 600;
+}
+
+/* ---- STORY INTRO ---- */
+.story-intro {
+  margin: 0 20px 14px;
+  padding: 18px 20px;
+  background: linear-gradient(135deg, var(--rose-light), var(--lilac));
+  border-radius: 16px;
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  border: 1px solid rgba(212,132,158,0.2);
+  animation: fadeUp 0.5s 0.08s ease both;
+}
+
+.story-intro .emoji {
+  font-size: 32px;
+  flex-shrink: 0;
+  line-height: 1;
+}
+
+.story-intro p {
+  font-family: 'Playfair Display', serif;
+  font-size: 14px;
+  font-style: italic;
+  color: var(--mauve);
+  line-height: 1.6;
+}
+
+/* ---- STORY CARDS ---- */
+.story-cards {
+  margin: 0 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  animation: fadeUp 0.5s 0.12s ease both;
+}
+
+.story-card {
+  background: #fff;
+  border-radius: 16px;
+  padding: 18px 18px;
+  box-shadow: 0 4px 14px rgba(61,37,53,0.07);
+  border: 1px solid rgba(212,132,158,0.1);
+  display: flex;
+  gap: 14px;
+  align-items: flex-start;
+}
+
+.story-step {
+  width: 32px;
+  height: 32px;
+  border-radius: 10px;
+  background: linear-gradient(135deg, var(--rose), var(--rose-dark));
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 14px;
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+
+.story-card-text h3 {
+  font-size: 13.5px;
+  font-weight: 600;
+  color: var(--text-dark);
+  margin-bottom: 5px;
+}
+
+.story-card-text p {
+  font-size: 13px;
+  color: var(--text-soft);
+  line-height: 1.72;
+  font-weight: 400;
+}
+
+/* ---- HIGHLIGHTS ---- */
+.highlights {
+  margin: 14px 20px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+  animation: fadeUp 0.5s 0.16s ease both;
+}
+
+.highlight {
+  background: #fff;
+  border-radius: 16px;
+  padding: 16px 14px;
+  box-shadow: 0 3px 12px rgba(61,37,53,0.07);
+  text-align: center;
+  border-bottom: 3px solid var(--rose-light);
+}
+
+.highlight-icon {
+  font-size: 20px;
+  color: var(--rose);
+  margin-bottom: 7px;
+}
+
+.highlight-value {
+  font-family: 'Playfair Display', serif;
+  font-size: 18px;
+  font-weight: 600;
+  color: var(--text-dark);
+  margin-bottom: 2px;
+}
+
+.highlight-label {
+  font-size: 10.5px;
+  color: var(--text-soft);
+  line-height: 1.4;
+  font-weight: 500;
+}
+
+/* ---- CLOSING QUOTE ---- */
+.closing-quote {
+  margin: 0 20px 14px;
+  padding: 22px;
+  background: linear-gradient(135deg, var(--text-dark), #5c3549);
+  border-radius: 18px;
+  position: relative;
+  overflow: hidden;
+  animation: fadeUp 0.5s 0.2s ease both;
+}
+
+.closing-quote::before {
+  content: '🧚‍♀️';
+  position: absolute;
+  top: 8px;
+  right: 14px;
+  font-size: 50px;
+  opacity: 0.15;
+  line-height: 1;
+}
+
+.closing-quote p {
+  font-family: 'Playfair Display', serif;
+  font-size: 15px;
+  font-style: italic;
+  color: rgba(255,255,255,0.88);
+  line-height: 1.75;
+  margin-bottom: 14px;
+}
+
+.closing-quote .author {
+  font-size: 11px;
+  color: var(--gold);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  font-weight: 600;
+  margin-bottom: 16px;
+}
+
+.quote-cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: linear-gradient(135deg, #2d9c63, #1e7a4e);
+  color: #fff;
+  padding: 11px 22px;
+  border-radius: 24px;
+  font-size: 13px;
+  font-weight: 600;
+  text-decoration: none;
+  box-shadow: 0 4px 16px rgba(37,156,99,0.3);
+  transition: transform 0.2s ease;
+}
+
+.quote-cta:hover { transform: scale(1.04); }
+
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(14px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+</style>
+</head>
+<body>
+
+<div class="top-bar"></div>
+
+<div class="page">
+
+  <div class="page-header">
+    <a href="index.html" class="back-btn"><i class="fa-solid fa-arrow-left"></i></a>
+    <div class="page-header-text">
+      <h1>Minha História</h1>
+      <p>Quem está por trás da Fada 🧚‍♀️</p>
+    </div>
+  </div>
+
+  <div class="photo-hero">
+    <img src="assets/barbara.jpeg" alt="Bárbara">
+    <div class="photo-caption">
+      <h2>Bárbara</h2>
+      <span>Fada Madrinha Materna · JP/PB</span>
+    </div>
+  </div>
+
+  <div class="story-intro">
+    <div class="emoji">✨</div>
+    <p>Era uma vez uma mãe de três que entendeu que nenhuma mãe deveria caminhar sozinha...</p>
+  </div>
+
+  <div class="story-cards">
+
+    <div class="story-card">
+      <div class="story-step"><i class="fa-solid fa-heart"></i></div>
+      <div class="story-card-text">
+        <h3>A descoberta</h3>
+        <p>Quando meus filhos chegaram, descobri que o amor é infinito, mas o tempo e a energia não são. Vivi a maternidade sem aquela rede de apoio que todos dizem que é necessária, mas que poucos realmente oferecem.</p>
+      </div>
+    </div>
+
+    <div class="story-card">
+      <div class="story-step"><i class="fa-solid fa-wind"></i></div>
+      <div class="story-card-text">
+        <h3>O turbilhão</h3>
+        <p>Senti na pele o que é estar no puerpério, tentando administrar a casa, as burocracias e as necessidades de um recém-nascido, tudo ao mesmo tempo. Enquanto o mundo olha para o bebê, a mãe muitas vezes fica esquecida.</p>
+      </div>
+    </div>
+
+    <div class="story-card">
+      <div class="story-step">🧚</div>
+      <div class="story-card-text">
+        <h3>O nascimento da Fada</h3>
+        <p>Foi dessa dor que nasceu a Fada Madrinha Materna. Hoje, meu propósito é ser o braço direito que eu não tive — cuidar das listas, agendamentos e pendências, para que você possa focar no seu bem mais precioso.</p>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="highlights">
+    <div class="highlight">
+      <div class="highlight-icon"><i class="fa-solid fa-baby"></i></div>
+      <div class="highlight-value">3</div>
+      <div class="highlight-label">Filhos — experiência real</div>
+    </div>
+    <div class="highlight">
+      <div class="highlight-icon"><i class="fa-solid fa-location-dot"></i></div>
+      <div class="highlight-value">JP/PB</div>
+      <div class="highlight-label">Presencial &amp; online</div>
+    </div>
+    <div class="highlight">
+      <div class="highlight-icon"><i class="fa-solid fa-hands-holding-heart"></i></div>
+      <div class="highlight-value">💖</div>
+      <div class="highlight-label">Suporte afetivo real</div>
+    </div>
+    <div class="highlight">
+      <div class="highlight-icon"><i class="fa-solid fa-wand-magic-sparkles"></i></div>
+      <div class="highlight-value">Leveza</div>
+      <div class="highlight-label">É o que você merece</div>
+    </div>
+  </div>
+
+  <div class="closing-quote">
+    <p>Eu trago a experiência, o norte e o cuidado; você fica com a leveza e o amor. Vamos caminhar juntas?</p>
+    <div class="author">— Bárbara, Fada Madrinha Materna</div>
+    <a href="https://wa.me/5583998493917" target="_blank" class="quote-cta">
+      <i class="fa-brands fa-whatsapp"></i> Vamos conversar
+    </a>
+  </div>
+
+</div>
+
+</body>
+</html>
